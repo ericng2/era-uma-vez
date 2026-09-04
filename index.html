@@ -122,6 +122,56 @@ a{color:inherit}
 .livro-txt h2 em{font-style:italic;color:#F2B441}
 .livro-legenda{margin-top:12px;text-align:center;font-size:12.5px;color:var(--fraco)}
 
+
+.livro{appearance:none;border:0;background:none;padding:0;cursor:pointer;font:inherit;
+  color:inherit;display:block;width:100%;text-align:left;
+  animation:settle .8s var(--mola) .2s both;perspective:900px}
+.livro-capa{display:block;position:relative;aspect-ratio:1/1;border-radius:8px;overflow:hidden;
+  box-shadow:var(--sombra-alta);transform:rotate(-2.2deg);
+  transition:transform .45s var(--suave),box-shadow .45s var(--suave)}
+.livro:hover .livro-capa,.livro:focus-visible .livro-capa{transform:rotate(0deg) translateY(-6px) scale(1.012)}
+.livro-capa img{width:100%;height:100%;object-fit:cover;display:block}
+.livro-veu{position:absolute;inset:0;
+  background:linear-gradient(to bottom,rgba(24,43,73,.42) 0 22%,transparent 42% 52%,rgba(24,43,73,.86) 100%)}
+.livro-topo{position:absolute;top:20px;left:22px;right:22px;z-index:2;font-size:10.5px;
+  font-weight:800;letter-spacing:.19em;text-transform:uppercase;color:#FBD99A}
+.livro-txt{position:absolute;inset:auto 0 0 0;padding:24px;z-index:2}
+.livro-h{display:block;font-family:var(--display);font-weight:600;
+  font-size:clamp(22px,3.1vw,30px);color:#FFF8ED;line-height:1.06}
+.livro-h em{font-style:italic;color:#F2B441}
+.livro-assina{display:inline-block;margin-top:12px;font-family:var(--texto);font-size:12.5px;
+  font-weight:800;color:#182B49;background:#F2B441;border-radius:99px;padding:5px 14px}
+.livro-abrir{position:absolute;inset:0;z-index:3;display:grid;place-items:center;
+  font-weight:800;font-size:15px;color:#182B49;background:rgba(255,248,237,.92);
+  opacity:0;transition:opacity .3s var(--suave)}
+.livro:hover .livro-abrir,.livro:focus-visible .livro-abrir{opacity:1}
+.livro-legenda{display:block;margin-top:12px;text-align:center;font-size:12.5px;color:var(--fraco)}
+
+/* ── a leitura, aberta por cima ── */
+.leitor{position:fixed;inset:0;z-index:100;display:none}
+.leitor[data-aberto="1"]{display:block}
+.leitor-veu{position:absolute;inset:0;background:rgba(18,12,36,.72);backdrop-filter:blur(6px);
+  opacity:0;transition:opacity .32s var(--suave)}
+.leitor[data-aberto="1"] .leitor-veu{opacity:1}
+.leitor-caixa{position:absolute;inset:16px;border-radius:16px;overflow:hidden;background:#FFF8ED;
+  box-shadow:0 40px 120px rgba(0,0,0,.5);display:flex;flex-direction:column;
+  opacity:0;transform:scale(.94) translateY(18px);
+  transition:opacity .36s var(--suave),transform .46s var(--mola)}
+.leitor[data-aberto="1"] .leitor-caixa{opacity:1;transform:none}
+.leitor iframe{flex:1;width:100%;border:0;display:block}
+.leitor-barra{flex:0 0 auto;display:flex;align-items:center;gap:12px;padding:12px 16px;
+  background:#182B49;color:#FFF8ED}
+.leitor-barra .rot{font-size:13px;opacity:.8}
+.leitor-barra .cta{margin-left:auto}
+.leitor-fechar{position:absolute;top:26px;right:26px;z-index:3;width:38px;height:38px;
+  border-radius:99px;border:0;background:rgba(255,248,237,.92);color:#182B49;
+  font-size:19px;font-weight:700;cursor:pointer;line-height:1}
+@media (max-width:560px){
+  .leitor-caixa{inset:8px}
+  .leitor-barra{flex-wrap:wrap}
+  .leitor-barra .cta{width:100%;margin-left:0}
+}
+
 /* ─── faixa ─── */
 .faixa{background:var(--noite);color:#EFE9DC;padding:26px 0}
 .faixa .env{display:flex;gap:34px;flex-wrap:wrap;justify-content:space-between;align-items:center}
@@ -216,15 +266,25 @@ footer .fim{margin-left:auto}
 </style>
 </head>
 <body>
+<div class="leitor" id="leitor" aria-hidden="true">
+  <div class="leitor-veu" onclick="fechaHistoria()"></div>
+  <div class="leitor-caixa" role="dialog" aria-modal="true" aria-label="O Boi da Cara Preta">
+    <iframe id="leitor-frame" title="O Boi da Cara Preta — uma história do Davi" src="about:blank"></iframe>
+    <div class="leitor-barra">
+      <span class="rot">Esta história foi feita para o Davi. A próxima pode ser da sua criança.</span>
+      <a class="btn btn-zap cta" style="width:auto"
+         href="https://wa.me/5541995553231?text=Li%20a%20hist%C3%B3ria%20do%20Davi.%20Quero%20o%20meu!"
+         target="_blank" rel="noopener">Quero o meu</a>
+    </div>
+    <button class="leitor-fechar" onclick="fechaHistoria()" aria-label="Fechar">✕</button>
+  </div>
+</div>
+
 <script>document.documentElement.classList.add('js')</script>
 
 <header class="topo" id="topo">
   <div class="env">
-    <a class="marca" href="#"><svg viewBox="0 0 40 34" width="30" height="26" aria-hidden="true" style="flex:none">
-        <path d="M8 6 Q3 6 3 9 v16 q0 -3 5 -3 t11 4 V10 Q13 6 8 6Z" fill="none" stroke="#123A6B" stroke-width="2.2" stroke-linejoin="round"/>
-        <path d="M32 6 Q37 6 37 9 v16 q0 -3 -5 -3 t-11 4 V10 Q27 6 32 6Z" fill="none" stroke="#123A6B" stroke-width="2.2" stroke-linejoin="round"/>
-        <path d="M20 0 l1.9 5.6 L27 7.5 l-5.1 1.9 L20 15 l-1.9 -5.6 L13 7.5 l5.1 -1.9Z" fill="#C4623F"/>
-      </svg>Era Uma Vez</a>
+    <a class="marca" href="#"><img src="marca/simbolo-era-uma-vez.png" alt="" width="30" height="30" style="flex:none;display:block">Era Uma Vez</a>
     <div class="dir">
       <button class="tema" id="tema" aria-label="Alternar tema">◐</button>
       <a class="btn btn-zap" href="https://wa.me/5541995553231?text=Oi!%20Quero%20fazer%20um%20livro%20personalizado" target="_blank" rel="noopener">Quero o meu</a>
@@ -247,53 +307,19 @@ footer .fim{margin-left:auto}
       <p class="mini">Sem cadastro · você fala com uma pessoa de verdade · <b>a foto é opcional</b></p>
     </div>
 
-    <div class="livro">
-      <div class="livro-capa">
-        <svg viewBox="0 0 560 560" preserveAspectRatio="xMidYMid slice" aria-label="Capa: Manu e a Noite Que Ficou Amiga">
-          <defs>
-            <radialGradient id="l1" cx="50%" cy="50%"><stop offset="0%" stop-color="#FFF6DF"/><stop offset="100%" stop-color="#F2B441"/></radialGradient>
-            <radialGradient id="b1" cx="50%" cy="50%"><stop offset="0%" stop-color="#F2B441" stop-opacity=".34"/><stop offset="100%" stop-color="#F2B441" stop-opacity="0"/></radialGradient>
-            <linearGradient id="c1" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#2E2A5E"/><stop offset="100%" stop-color="#1B1B3A"/></linearGradient>
-            <linearGradient id="v1" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0%" stop-color="#1B1B3A" stop-opacity="0"/>
-              <stop offset="55%" stop-color="#1B1B3A" stop-opacity=".74"/>
-              <stop offset="100%" stop-color="#1B1B3A" stop-opacity=".95"/>
-            </linearGradient>
-          </defs>
-          <rect width="560" height="560" fill="url(#c1)"/>
-          <circle cx="410" cy="150" r="150" fill="url(#b1)"/>
-          <circle cx="410" cy="150" r="52" fill="url(#l1)"/>
-          <circle cx="392" cy="136" r="9" fill="#E8A932" opacity=".45"/>
-          <circle cx="424" cy="164" r="6" fill="#E8A932" opacity=".38"/>
-          <g fill="#FBF3E4">
-            <circle cx="80" cy="70" r="2.6" opacity=".9"/><circle cx="150" cy="120" r="1.8" opacity=".6"/>
-            <circle cx="240" cy="58" r="2.2" opacity=".8"/><circle cx="320" cy="112" r="1.6" opacity=".5"/>
-            <circle cx="60" cy="210" r="1.9" opacity=".7"/><circle cx="500" cy="250" r="2.4" opacity=".8"/>
-            <circle cx="196" cy="238" r="1.5" opacity=".5"/><circle cx="470" cy="60" r="1.7" opacity=".6"/>
-          </g>
-          <path d="M0 430 Q140 372 280 424 T560 404 L560 560 L0 560Z" fill="#2A2A55"/>
-          <path d="M0 476 Q170 428 330 470 T560 452 L560 560 L0 560Z" fill="#20204A"/>
-          <g transform="translate(56,196)">
-            <path d="M0 44 L66 0 L132 44 Z" fill="#3E3768"/>
-            <rect x="12" y="42" width="108" height="92" fill="#332C5C"/>
-            <rect x="46" y="66" width="40" height="40" rx="4" fill="#F2B441"/>
-            <rect x="46" y="66" width="40" height="40" rx="4" fill="none" stroke="#241F45" stroke-width="3"/>
-            <line x1="66" y1="66" x2="66" y2="106" stroke="#241F45" stroke-width="3"/>
-            <line x1="46" y1="86" x2="86" y2="86" stroke="#241F45" stroke-width="3"/>
-            <circle cx="60" cy="84" r="8.5" fill="#F0C9A4"/>
-            <path d="M51.5 82 a8.5 8.5 0 0 1 17 0 q-8.5 -7 -17 0Z" fill="#4A3728"/>
-            <rect x="53" y="93" width="14" height="13" rx="4" fill="#E86A5C"/>
-          </g>
-          <rect y="290" width="560" height="270" fill="url(#v1)"/>
-        </svg>
-        <div class="livro-topo">Um livro só da Manu · 5 anos</div>
-        <div class="livro-txt">
-          <h2>Manu e a <em>Noite</em> Que Ficou Amiga</h2>
-          <div class="livro-assina">Era Uma Vez… Manu</div>
-        </div>
-      </div>
-      <p class="livro-legenda">Exemplo real · briefing: “Manu, 5 anos, medo de dormir”</p>
-    </div>
+    <button class="livro" id="abre-historia" aria-label="Abrir a história O Boi da Cara Preta">
+      <span class="livro-capa">
+        <img src="marca/capa-boi.jpg" alt="Davi na cama e a sombra do boi na parede">
+        <span class="livro-veu"></span>
+        <span class="livro-topo">Um livro só do Davi · 6 anos</span>
+        <span class="livro-txt">
+          <span class="livro-h">O Boi da <em>Cara Preta</em></span>
+          <span class="livro-assina">Era Uma Vez… Davi</span>
+        </span>
+        <span class="livro-abrir">▶ Ler a história inteira</span>
+      </span>
+      <span class="livro-legenda">Exemplo real · briefing: “Davi, 6 anos, medo do escuro”</span>
+    </button>
   </div>
 </section>
 
@@ -444,7 +470,7 @@ footer .fim{margin-left:auto}
 
 <section class="fecho">
   <div class="env revela">
-    <img src="marca/logo-era-uma-vez.jpg" alt="Era Uma Vez — toda criança merece ser a personagem principal"
+    <img src="marca/logo-era-uma-vez.png" alt="Era Uma Vez — toda criança merece ser a personagem principal"
       style="width:min(300px,72%);border-radius:14px;display:block;margin:0 auto 26px">
     <h2>Hoje à noite ela pode ouvir a história dela.</h2>
     <p>Manda uma mensagem com o nome e a idade. A gente cuida do resto.</p>
@@ -456,11 +482,7 @@ footer .fim{margin-left:auto}
 
 <footer>
   <div class="env">
-    <a class="marca" href="#" style="font-size:15px"><svg viewBox="0 0 40 34" width="30" height="26" aria-hidden="true" style="flex:none">
-        <path d="M8 6 Q3 6 3 9 v16 q0 -3 5 -3 t11 4 V10 Q13 6 8 6Z" fill="none" stroke="#123A6B" stroke-width="2.2" stroke-linejoin="round"/>
-        <path d="M32 6 Q37 6 37 9 v16 q0 -3 -5 -3 t-11 4 V10 Q27 6 32 6Z" fill="none" stroke="#123A6B" stroke-width="2.2" stroke-linejoin="round"/>
-        <path d="M20 0 l1.9 5.6 L27 7.5 l-5.1 1.9 L20 15 l-1.9 -5.6 L13 7.5 l5.1 -1.9Z" fill="#C4623F"/>
-      </svg>Era Uma Vez</a>
+    <a class="marca" href="#" style="font-size:15px"><img src="marca/simbolo-era-uma-vez.png" alt="" width="30" height="30" style="flex:none;display:block">Era Uma Vez</a>
     <a href="#como">Como funciona</a><a href="#exemplos">Exemplos</a><a href="#precos">Preços</a>
     <span class="fim">Livros feitos um a um · 2026</span>
   </div>
@@ -469,6 +491,24 @@ footer .fim{margin-left:auto}
 <a class="btn btn-zap zap-fixo" href="https://wa.me/5541995553231?text=Oi!%20Quero%20fazer%20um%20livro%20personalizado" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">💬 WhatsApp</a>
 
 <script>
+
+  const leitor = document.getElementById('leitor');
+  const frame  = document.getElementById('leitor-frame');
+  function abreHistoria(){
+    if (frame.src === 'about:blank') frame.src = 'historia.html';
+    leitor.dataset.aberto = '1';
+    leitor.setAttribute('aria-hidden','false');
+    document.body.style.overflow = 'hidden';
+  }
+  function fechaHistoria(){
+    leitor.dataset.aberto = '0';
+    leitor.setAttribute('aria-hidden','true');
+    document.body.style.overflow = '';
+  }
+  document.getElementById('abre-historia').onclick = abreHistoria;
+  document.querySelectorAll('.cartao-historia').forEach(a => a.onclick = e => { e.preventDefault(); abreHistoria(); });
+  addEventListener('keydown', e => { if (e.key === 'Escape') fechaHistoria(); });
+
   const raiz = document.documentElement;
   const escuroAgora = () => raiz.dataset.tema
     ? raiz.dataset.tema === 'escuro'
