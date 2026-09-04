@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Téo e o Bolso Cheio de Casa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=Nunito:wght@400;600;700&display=swap">
+<style>
+:root{
+  --ceu:#4E86C6; --ceu-2:#6FA3D8; --grama:#7FB77E; --grama-2:#6AA36A;
+  --creme:#FBF3E4; --creme-2:#F3E6CE; --sol:#FBD574; --telha:#D4574A;
+  --pele:#E8B98F; --cabelo:#2E2118; --tinta:#2A2440; --amarelo:#F2B441;
+  --display:'Fraunces',Georgia,serif; --texto:'Nunito',-apple-system,system-ui,sans-serif;
+}
+*{box-sizing:border-box}
+body{margin:0;background:#EDE6DA;color:var(--tinta);font-family:var(--texto);
+  -webkit-font-smoothing:antialiased;padding:32px 20px;display:flex;flex-direction:column;
+  align-items:center;gap:32px}
+.rotulo{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+  color:#8A8296;align-self:flex-start;max-width:1000px;width:100%;margin:0 auto}
+.folha{width:min(1000px,100%);aspect-ratio:2/1;background:var(--creme);border-radius:4px;
+  box-shadow:0 2px 6px rgba(42,36,64,.10),0 20px 50px rgba(42,36,64,.18);
+  display:grid;grid-template-columns:1fr 1fr;overflow:hidden;position:relative}
+.folha::after{content:'';position:absolute;inset:0 auto 0 50%;width:34px;transform:translateX(-17px);
+  background:linear-gradient(90deg,transparent,rgba(42,36,64,.09) 42%,rgba(42,36,64,.13) 50%,rgba(42,36,64,.09) 58%,transparent);
+  pointer-events:none}
+.capa{grid-template-columns:1fr;aspect-ratio:1/1;width:min(560px,100%);background:var(--ceu)}
+.arte{position:relative;overflow:hidden}
+.arte svg{display:block;width:100%;height:100%}
+.texto{padding:min(7%,54px);display:flex;flex-direction:column;justify-content:center;gap:18px;
+  background:var(--creme)}
+.texto p{margin:0;font-family:var(--display);font-size:clamp(15px,2.05vw,21px);line-height:1.62;
+  color:var(--tinta);font-weight:400}
+.texto p .nome{color:var(--telha);font-weight:700}
+.texto .grande{font-size:clamp(19px,2.7vw,28px);font-weight:600;line-height:1.35}
+.folio{position:absolute;bottom:16px;font-size:11px;color:#A8A0B4;letter-spacing:.08em}
+.folio.e{left:26px} .folio.d{right:26px}
+.capa-corpo{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:space-between;
+  padding:34px;z-index:2;pointer-events:none}
+.capa-topo{font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;
+  color:#FFF3D6;opacity:.95}
+.capa h1{font-family:var(--display);font-weight:600;font-size:clamp(30px,7.4vw,46px);line-height:1.06;
+  color:var(--creme);margin:0;text-wrap:balance;letter-spacing:-.01em}
+.capa h1 em{font-style:italic;color:var(--sol)}
+.capa .selo{font-size:12.5px;font-weight:700;color:#23405F;background:var(--sol);
+  border-radius:99px;padding:6px 15px;display:inline-block;margin-top:16px}
+.capa .arte{position:absolute;inset:0;z-index:1}
+.nota{max-width:1000px;width:100%;font-size:12.5px;color:#7A7288;line-height:1.6;
+  border-top:1px solid #DCD3C6;padding-top:14px}
+.nota b{color:#5A5378}
+@media (max-width:760px){.folha{aspect-ratio:auto;grid-template-columns:1fr}
+  .folha .arte{aspect-ratio:1/1}.folha::after{display:none}}
+@media print{body{background:#fff;padding:0;gap:0}.rotulo,.nota{display:none}
+  .folha{box-shadow:none;border-radius:0;page-break-after:always;width:100%}}
+</style>
+</head>
+<body>
+
+<div class="rotulo">Capa</div>
+<div class="folha capa">
+  <div class="arte">
+    <svg viewBox="0 0 560 560" preserveAspectRatio="xMidYMid slice" aria-label="Téo indo para a escola com a mochila">
+      <defs>
+        <linearGradient id="ceu" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#6FA3D8"/><stop offset="100%" stop-color="#A8CBE8"/>
+        </linearGradient>
+        <radialGradient id="sol"><stop offset="0%" stop-color="#FFF3D6"/><stop offset="100%" stop-color="#FBD574"/></radialGradient>
+        <linearGradient id="veu" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#23405F" stop-opacity="0"/>
+          <stop offset="58%" stop-color="#23405F" stop-opacity=".70"/>
+          <stop offset="100%" stop-color="#23405F" stop-opacity=".93"/>
+        </linearGradient>
+      </defs>
+      <rect width="560" height="560" fill="url(#ceu)"/>
+      <circle cx="112" cy="104" r="46" fill="url(#sol)"/>
+      <g fill="#FFFFFF" opacity=".72">
+        <ellipse cx="392" cy="112" rx="52" ry="24"/><ellipse cx="428" cy="100" rx="34" ry="20"/>
+        <ellipse cx="252" cy="66" rx="38" ry="17"/>
+      </g>
+      <path d="M0 252 Q140 216 280 246 T560 228 L560 560 L0 560Z" fill="#8CC08A"/>
+      <path d="M0 304 Q160 272 320 300 T560 284 L560 560 L0 560Z" fill="#7FB77E"/>
+      <!-- escola -->
+      <g transform="translate(346,112)">
+        <rect x="0" y="46" width="168" height="112" fill="#F0E4CC"/>
+        <path d="M-14 46 L84 -4 L182 46Z" fill="#D4574A"/>
+        <rect x="66" y="96" width="38" height="62" fill="#9A6F4C"/>
+        <rect x="18" y="72" width="30" height="30" rx="3" fill="#8FC6E8"/>
+        <rect x="122" y="72" width="30" height="30" rx="3" fill="#8FC6E8"/>
+      </g>
+      <!-- Téo, de costas, mochila -->
+      <g transform="translate(120,166)">
+        <rect x="16" y="94" width="13" height="42" fill="#E8B98F"/>
+        <rect x="40" y="94" width="13" height="42" fill="#E8B98F"/>
+        <rect x="12" y="130" width="20" height="12" rx="4" fill="#2E2118"/>
+        <rect x="38" y="130" width="20" height="12" rx="4" fill="#2E2118"/>
+        <rect x="8" y="44" width="54" height="54" rx="8" fill="#F2B441"/>
+        <rect x="0" y="50" width="72" height="46" rx="12" fill="#D4574A"/>
+        <rect x="24" y="62" width="24" height="16" rx="4" fill="#B8402F"/>
+        <circle cx="35" cy="24" r="24" fill="#E8B98F"/>
+        <path d="M11 22 a24 24 0 0 1 48 0 q-24 -18 -48 0Z" fill="#2E2118"/>
+      </g>
+      <rect y="300" width="560" height="260" fill="url(#veu)"/>
+    </svg>
+  </div>
+  <div class="capa-corpo">
+    <div class="capa-topo">Um livro só do Téo · 4 anos</div>
+    <div>
+      <h1>Téo e o Bolso <em>Cheio de Casa</em></h1>
+      <div class="selo">Era Uma Vez Você</div>
+    </div>
+  </div>
+</div>
+
+<div class="rotulo">Páginas 4 e 5</div>
+<div class="folha">
+  <div class="arte">
+    <svg viewBox="0 0 500 500" preserveAspectRatio="xMidYMid slice" aria-label="Téo enchendo o bolso com coisas de casa">
+      <rect width="500" height="500" fill="#F3E6CE"/>
+      <rect y="330" width="500" height="170" fill="#E2D0B0"/>
+      <rect x="0" y="60" width="500" height="12" fill="#C9AE86"/>
+      <!-- coisas de casa flutuando -->
+      <g>
+        <circle cx="96" cy="118" r="17" fill="#D4574A"/><circle cx="96" cy="118" r="6" fill="#F3E6CE"/>
+        <rect x="164" y="96" width="30" height="30" rx="6" fill="#7FB77E" transform="rotate(-12 179 111)"/>
+        <path d="M262 96 l16 30 l-32 0Z" fill="#F2B441"/>
+        <ellipse cx="346" cy="118" rx="20" ry="13" fill="#8FC6E8"/>
+        <circle cx="418" cy="102" r="11" fill="#B08CD8"/>
+      </g>
+      <!-- Téo de perfil, mão no bolso -->
+      <g transform="translate(150,168)">
+        <rect x="26" y="160" width="17" height="52" fill="#E8B98F"/>
+        <rect x="56" y="160" width="17" height="52" fill="#E8B98F"/>
+        <rect x="20" y="206" width="27" height="14" rx="5" fill="#2E2118"/>
+        <rect x="52" y="206" width="27" height="14" rx="5" fill="#2E2118"/>
+        <rect x="14" y="82" width="72" height="82" rx="10" fill="#F2B441"/>
+        <rect x="22" y="120" width="30" height="32" rx="5" fill="#D9A02F"/>
+        <rect x="-2" y="96" width="22" height="52" rx="10" fill="#E8B98F" transform="rotate(14 9 122)"/>
+        <circle cx="50" cy="46" r="34" fill="#E8B98F"/>
+        <path d="M16 42 a34 34 0 0 1 68 0 q-34 -26 -68 0Z" fill="#2E2118"/>
+        <circle cx="38" cy="48" r="5.6" fill="#2A2440"/><circle cx="64" cy="48" r="5.6" fill="#2A2440"/>
+        <circle cx="39.6" cy="46" r="1.9" fill="#FBF3E4"/><circle cx="65.6" cy="46" r="1.9" fill="#FBF3E4"/>
+        <path d="M44 64 q7 6 14 0" stroke="#C08A5E" stroke-width="2.8" fill="none" stroke-linecap="round"/>
+      </g>
+      <span></span>
+    </svg>
+  </div>
+  <div class="texto">
+    <p class="grande">Na noite antes do primeiro dia de aula, <span class="nome">Téo</span> encheu o bolso.</p>
+    <p>Um botão do casaco da mãe. Uma pedrinha do quintal. A tampa azul de uma canetinha que já tinha secado.</p>
+    <p>Coisa nenhuma, se você perguntar. <strong>A casa inteira</strong>, se perguntar pro Téo.</p>
+    <span class="folio e">4</span><span class="folio d">5</span>
+  </div>
+</div>
+
+<div class="rotulo">Páginas 6 e 7</div>
+<div class="folha">
+  <div class="texto">
+    <p class="grande">— O que tem aí? — perguntou a menina do lado.</p>
+    <p><span class="nome">Téo</span> abriu a mão devagar, com medo de ela rir.</p>
+    <p>A menina olhou o botão, a pedrinha e a tampa azul. Aí enfiou a mão no <strong>bolso dela</strong> e tirou uma colher pequena, dessas de mexer café.</p>
+    <p>— Essa é da minha vó — disse.</p>
+    <span class="folio e">6</span><span class="folio d">7</span>
+  </div>
+  <div class="arte">
+    <svg viewBox="0 0 500 500" preserveAspectRatio="xMidYMid slice" aria-label="Téo e a menina mostrando o que trouxeram no bolso">
+      <rect width="500" height="500" fill="#8FC6E8"/>
+      <rect y="336" width="500" height="164" fill="#E2D0B0"/>
+      <rect x="40" y="86" width="180" height="120" rx="6" fill="#F0E4CC"/>
+      <rect x="40" y="86" width="180" height="120" rx="6" fill="none" stroke="#C9AE86" stroke-width="6"/>
+      <path d="M62 150 q40 -34 80 0 t60 -14" stroke="#7FB77E" stroke-width="7" fill="none" stroke-linecap="round"/>
+      <!-- Téo -->
+      <g transform="translate(96,196)">
+        <rect x="24" y="150" width="16" height="48" fill="#E8B98F"/><rect x="52" y="150" width="16" height="48" fill="#E8B98F"/>
+        <rect x="18" y="192" width="26" height="13" rx="5" fill="#2E2118"/><rect x="48" y="192" width="26" height="13" rx="5" fill="#2E2118"/>
+        <rect x="14" y="78" width="66" height="76" rx="10" fill="#F2B441"/>
+        <rect x="66" y="106" width="34" height="18" rx="9" fill="#E8B98F"/>
+        <circle cx="47" cy="44" r="32" fill="#E8B98F"/>
+        <path d="M15 40 a32 32 0 0 1 64 0 q-32 -24 -64 0Z" fill="#2E2118"/>
+        <circle cx="36" cy="46" r="5.2" fill="#2A2440"/><circle cx="60" cy="46" r="5.2" fill="#2A2440"/>
+        <path d="M41 61 q7 7 15 0" stroke="#C08A5E" stroke-width="2.8" fill="none" stroke-linecap="round"/>
+      </g>
+      <!-- a menina -->
+      <g transform="translate(288,196)">
+        <rect x="24" y="150" width="16" height="48" fill="#D9A57C"/><rect x="52" y="150" width="16" height="48" fill="#D9A57C"/>
+        <rect x="18" y="192" width="26" height="13" rx="5" fill="#B8402F"/><rect x="48" y="192" width="26" height="13" rx="5" fill="#B8402F"/>
+        <path d="M12 78 h68 l10 76 h-88Z" fill="#B08CD8"/>
+        <rect x="-8" y="106" width="34" height="18" rx="9" fill="#D9A57C"/>
+        <circle cx="46" cy="44" r="32" fill="#D9A57C"/>
+        <path d="M12 44 a34 34 0 0 1 68 0 q-6 -34 -34 -34 t-34 34Z" fill="#3A2418"/>
+        <circle cx="35" cy="46" r="5.2" fill="#2A2440"/><circle cx="59" cy="46" r="5.2" fill="#2A2440"/>
+        <path d="M40 61 q7 7 15 0" stroke="#A8724E" stroke-width="2.8" fill="none" stroke-linecap="round"/>
+      </g>
+      <!-- as duas mãos abertas, no meio -->
+      <circle cx="250" cy="308" r="11" fill="#D4574A"/>
+      <ellipse cx="272" cy="316" rx="9" ry="6" fill="#9AA6B4"/>
+    </svg>
+  </div>
+</div>
+
+<div class="nota">
+  <b>Amostra do produto.</b> Briefing: <b>Téo, 4 anos, primeiro dia de aula</b>. Ilustrações em
+  vetor desenhadas no próprio arquivo; na produção saem por IA no mesmo estilo.
+  <b>Nenhuma foto foi usada.</b>
+</div>
+
+</body>
+</html>

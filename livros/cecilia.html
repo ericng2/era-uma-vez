@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cecília e o Pedido Que Não Cabia</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=Nunito:wght@400;600;700&display=swap">
+<style>
+:root{
+  --uva:#4A2D7A; --uva-2:#5B3A8C; --uva-3:#3A2260;
+  --creme:#FBF3E4; --creme-2:#F3E6CE; --rosa:#F2A0A0; --magenta:#C4508F;
+  --ambar:#F2B441; --verde:#7FB77E; --pele:#D9A57C; --cabelo:#3A2418; --tinta:#2A2440;
+  --display:'Fraunces',Georgia,serif; --texto:'Nunito',-apple-system,system-ui,sans-serif;
+}
+*{box-sizing:border-box}
+body{margin:0;background:#EDE6DA;color:var(--tinta);font-family:var(--texto);
+  -webkit-font-smoothing:antialiased;padding:32px 20px;display:flex;flex-direction:column;
+  align-items:center;gap:32px}
+.rotulo{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+  color:#8A8296;align-self:flex-start;max-width:1000px;width:100%;margin:0 auto}
+.folha{width:min(1000px,100%);aspect-ratio:2/1;background:var(--creme);border-radius:4px;
+  box-shadow:0 2px 6px rgba(42,36,64,.10),0 20px 50px rgba(42,36,64,.18);
+  display:grid;grid-template-columns:1fr 1fr;overflow:hidden;position:relative}
+.folha::after{content:'';position:absolute;inset:0 auto 0 50%;width:34px;transform:translateX(-17px);
+  background:linear-gradient(90deg,transparent,rgba(42,36,64,.09) 42%,rgba(42,36,64,.13) 50%,rgba(42,36,64,.09) 58%,transparent);
+  pointer-events:none}
+.capa{grid-template-columns:1fr;aspect-ratio:1/1;width:min(560px,100%);background:var(--uva)}
+.arte{position:relative;overflow:hidden}
+.arte svg{display:block;width:100%;height:100%}
+.texto{padding:min(7%,54px);display:flex;flex-direction:column;justify-content:center;gap:18px;
+  background:var(--creme)}
+.texto p{margin:0;font-family:var(--display);font-size:clamp(15px,2.05vw,21px);line-height:1.62;
+  color:var(--tinta);font-weight:400}
+.texto p .nome{color:var(--magenta);font-weight:700}
+.texto .grande{font-size:clamp(19px,2.7vw,28px);font-weight:600;line-height:1.35}
+.folio{position:absolute;bottom:16px;font-size:11px;color:#A8A0B4;letter-spacing:.08em}
+.folio.e{left:26px} .folio.d{right:26px}
+.capa-corpo{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:space-between;
+  padding:34px;z-index:2;pointer-events:none}
+.capa-topo{font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;
+  color:#FBD99A;opacity:.95}
+.capa h1{font-family:var(--display);font-weight:600;font-size:clamp(30px,7.4vw,46px);line-height:1.06;
+  color:var(--creme);margin:0;text-wrap:balance;letter-spacing:-.01em}
+.capa h1 em{font-style:italic;color:var(--ambar)}
+.capa .selo{font-size:12.5px;font-weight:700;color:var(--uva-3);background:var(--ambar);
+  border-radius:99px;padding:6px 15px;display:inline-block;margin-top:16px}
+.capa .arte{position:absolute;inset:0;z-index:1}
+.nota{max-width:1000px;width:100%;font-size:12.5px;color:#7A7288;line-height:1.6;
+  border-top:1px solid #DCD3C6;padding-top:14px}
+.nota b{color:#5A5378}
+@media (max-width:760px){.folha{aspect-ratio:auto;grid-template-columns:1fr}
+  .folha .arte{aspect-ratio:1/1}.folha::after{display:none}}
+@media print{body{background:#fff;padding:0;gap:0}.rotulo,.nota{display:none}
+  .folha{box-shadow:none;border-radius:0;page-break-after:always;width:100%}}
+</style>
+</head>
+<body>
+
+<div class="rotulo">Capa</div>
+<div class="folha capa">
+  <div class="arte">
+    <svg viewBox="0 0 560 560" preserveAspectRatio="xMidYMid slice" aria-label="Cecília diante do bolo, prestes a fazer o pedido">
+      <defs>
+        <linearGradient id="fundo" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#5B3A8C"/><stop offset="100%" stop-color="#3A2260"/>
+        </linearGradient>
+        <radialGradient id="chama"><stop offset="0%" stop-color="#FFF6DF"/><stop offset="100%" stop-color="#F2B441" stop-opacity="0"/></radialGradient>
+        <linearGradient id="veu" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#2A1848" stop-opacity="0"/>
+          <stop offset="58%" stop-color="#2A1848" stop-opacity=".72"/>
+          <stop offset="100%" stop-color="#2A1848" stop-opacity=".95"/>
+        </linearGradient>
+      </defs>
+      <rect width="560" height="560" fill="url(#fundo)"/>
+      <!-- bandeirinhas -->
+      <path d="M-10 66 Q140 108 290 74 T576 96" stroke="#7A5AA8" stroke-width="3" fill="none"/>
+      <g>
+        <path d="M52 78 l24 4 l-8 26Z" fill="#F2A0A0"/><path d="M116 92 l24 2 l-10 26Z" fill="#F2B441"/>
+        <path d="M182 100 l24 0 l-12 26Z" fill="#7FB77E"/><path d="M248 96 l24 -2 l-10 26Z" fill="#C4508F"/>
+        <path d="M314 86 l24 -4 l-8 26Z" fill="#8FC6E8"/><path d="M380 78 l24 -4 l-8 26Z" fill="#F2A0A0"/>
+        <path d="M446 82 l24 -2 l-9 26Z" fill="#F2B441"/>
+      </g>
+      <g fill="#FBF3E4"><circle cx="70" cy="180" r="2.2" opacity=".7"/><circle cx="470" cy="200" r="1.9" opacity=".6"/>
+        <circle cx="382" cy="152" r="1.6" opacity=".5"/><circle cx="150" cy="212" r="1.7" opacity=".55"/></g>
+      <!-- mesa -->
+      <rect y="318" width="560" height="242" fill="#2E1C50"/>
+      <rect y="310" width="560" height="14" fill="#4A2D7A"/>
+      <!-- bolo -->
+      <g transform="translate(316,168)">
+        <circle cx="60" cy="-46" r="54" fill="url(#chama)"/>
+        <rect x="0" y="56" width="120" height="78" rx="8" fill="#FBF3E4"/>
+        <rect x="0" y="56" width="120" height="20" fill="#F2A0A0"/>
+        <rect x="18" y="20" width="84" height="42" rx="6" fill="#F3E6CE"/>
+        <rect x="18" y="20" width="84" height="12" fill="#C4508F"/>
+        <rect x="24" y="-8" width="6" height="28" fill="#7FB77E"/><rect x="36" y="-4" width="6" height="24" fill="#7FB77E"/><rect x="48" y="-8" width="6" height="28" fill="#7FB77E"/><rect x="60" y="-4" width="6" height="24" fill="#7FB77E"/><rect x="72" y="-8" width="6" height="28" fill="#7FB77E"/><rect x="84" y="-4" width="6" height="24" fill="#7FB77E"/><rect x="96" y="-8" width="6" height="28" fill="#7FB77E"/>
+        <path d="M27 -28 q8 10 0 18 q-8 -8 0 -18Z" fill="#F2B441"/><path d="M39 -24 q8 10 0 18 q-8 -8 0 -18Z" fill="#F2B441"/><path d="M51 -28 q8 10 0 18 q-8 -8 0 -18Z" fill="#F2B441"/><path d="M63 -24 q8 10 0 18 q-8 -8 0 -18Z" fill="#F2B441"/><path d="M75 -28 q8 10 0 18 q-8 -8 0 -18Z" fill="#F2B441"/><path d="M87 -24 q8 10 0 18 q-8 -8 0 -18Z" fill="#F2B441"/><path d="M99 -28 q8 10 0 18 q-8 -8 0 -18Z" fill="#F2B441"/>
+      </g>
+      <!-- Cecília -->
+      <g transform="translate(96,142)">
+        <circle cx="52" cy="50" r="47" fill="#3A2418"/>
+        <rect x="7" y="50" width="90" height="52" rx="22" fill="#3A2418"/>
+        <circle cx="52" cy="58" r="38" fill="#D9A57C"/>
+        <circle cx="39" cy="58" r="6" fill="#2A2440"/><circle cx="66" cy="58" r="6" fill="#2A2440"/>
+        <circle cx="40.6" cy="55.8" r="2" fill="#FBF3E4"/><circle cx="67.6" cy="55.8" r="2" fill="#FBF3E4"/>
+        <ellipse cx="52" cy="78" rx="7" ry="9" fill="#7A3A46"/>
+        <path d="M18 100 h68 l12 76 h-92Z" fill="#7FB77E"/>
+      </g>
+      <rect y="300" width="560" height="260" fill="url(#veu)"/>
+    </svg>
+  </div>
+  <div class="capa-corpo">
+    <div class="capa-topo">Um livro só da Cecília · 7 anos</div>
+    <div>
+      <h1>Cecília e o Pedido <em>Que Não Cabia</em></h1>
+      <div class="selo">Era Uma Vez Você</div>
+    </div>
+  </div>
+</div>
+
+<div class="rotulo">Páginas 4 e 5</div>
+<div class="folha">
+  <div class="arte">
+    <svg viewBox="0 0 500 500" preserveAspectRatio="xMidYMid slice" aria-label="Cecília diante das sete velinhas acesas">
+      <rect width="500" height="500" fill="#4A2D7A"/>
+      <rect y="380" width="500" height="120" fill="#2E1C50"/>
+      <rect y="372" width="500" height="12" fill="#5B3A8C"/>
+      <!-- bolo grande com 7 velas -->
+      <g transform="translate(150,196)">
+        <rect x="0" y="96" width="200" height="86" rx="8" fill="#FBF3E4"/>
+        <rect x="0" y="96" width="200" height="22" fill="#F2A0A0"/>
+        <rect x="26" y="52" width="148" height="46" rx="6" fill="#F3E6CE"/>
+        <rect x="26" y="52" width="148" height="13" fill="#C4508F"/>
+        <g fill="#7FB77E">
+          <rect x="34" y="26" width="6" height="26"/><rect x="56" y="20" width="6" height="32"/>
+          <rect x="78" y="24" width="6" height="28"/><rect x="100" y="18" width="6" height="34"/>
+          <rect x="122" y="24" width="6" height="28"/><rect x="144" y="22" width="6" height="30"/>
+          <rect x="166" y="28" width="6" height="24"/>
+        </g>
+        <g fill="#F2B441">
+          <path d="M37 12 q8 9 0 16 q-8 -7 0 -16Z"/><path d="M59 6 q8 9 0 16 q-8 -7 0 -16Z"/>
+          <path d="M81 10 q8 9 0 16 q-8 -7 0 -16Z"/><path d="M103 4 q8 9 0 16 q-8 -7 0 -16Z"/>
+          <path d="M125 10 q8 9 0 16 q-8 -7 0 -16Z"/><path d="M147 8 q8 9 0 16 q-8 -7 0 -16Z"/>
+          <path d="M169 14 q8 9 0 16 q-8 -7 0 -16Z"/>
+        </g>
+      </g>
+      <ellipse cx="250" cy="220" rx="180" ry="110" fill="#F2B441" opacity=".14"/>
+      <!-- Cecília, olhos fechados -->
+      <g transform="translate(52,236)">
+        <circle cx="44" cy="42" r="41" fill="#3A2418"/>
+        <rect x="5" y="42" width="78" height="46" rx="19" fill="#3A2418"/>
+        <circle cx="44" cy="50" r="33" fill="#D9A57C"/>
+        <path d="M27 50 q6 -6 12 0" stroke="#2A2440" stroke-width="3.4" fill="none" stroke-linecap="round"/>
+        <path d="M51 50 q6 -6 12 0" stroke="#2A2440" stroke-width="3.4" fill="none" stroke-linecap="round"/>
+        <ellipse cx="45" cy="68" rx="6" ry="7.5" fill="#7A3A46"/>
+        <path d="M12 86 h64 l12 70 h-88Z" fill="#7FB77E"/>
+      </g>
+    </svg>
+  </div>
+  <div class="texto">
+    <p class="grande">Sete velinhas acesas, e todo mundo esperando <span class="nome">Cecília</span> soprar.</p>
+    <p>— Faz o pedido! — disseram. — Mas não conta pra ninguém, senão não vale.</p>
+    <p>Cecília fechou os olhos. E aí percebeu uma coisa: <strong>o pedido dela não cabia num sopro só.</strong></p>
+    <span class="folio e">4</span><span class="folio d">5</span>
+  </div>
+</div>
+
+<div class="rotulo">Páginas 6 e 7</div>
+<div class="folha">
+  <div class="texto">
+    <p class="grande">Ela queria a bicicleta. Queria o cachorro. Queria que a vó voltasse a morar perto.</p>
+    <p>Queria que ninguém nunca mais dissesse <em>“você já está grande pra isso”</em>.</p>
+    <p>Então <span class="nome">Cecília</span> fez o que ninguém tinha pensado antes: soprou <strong>uma velinha de cada vez</strong>.</p>
+    <p>Sete velinhas. Sete pedidos. Um aniversário só.</p>
+    <span class="folio e">6</span><span class="folio d">7</span>
+  </div>
+  <div class="arte">
+    <svg viewBox="0 0 500 500" preserveAspectRatio="xMidYMid slice" aria-label="Sete pedidos saindo das velinhas como pequenas cenas">
+      <rect width="500" height="500" fill="#3A2260"/>
+      <rect y="392" width="500" height="108" fill="#2A1848"/>
+      <ellipse cx="250" cy="250" rx="220" ry="190" fill="#F2B441" opacity=".08"/>
+      <!-- bolhas de pedido -->
+      <g>
+        <circle cx="112" cy="128" r="46" fill="#5B3A8C"/>
+        <circle cx="106" cy="140" r="13" fill="none" stroke="#F2B441" stroke-width="4"/>
+        <circle cx="132" cy="140" r="13" fill="none" stroke="#F2B441" stroke-width="4"/>
+        <path d="M106 140 l10 -18 h16" stroke="#F2B441" stroke-width="4" fill="none" stroke-linecap="round"/>
+      </g>
+      <g>
+        <circle cx="256" cy="98" r="44" fill="#5B3A8C"/>
+        <ellipse cx="256" cy="104" rx="20" ry="15" fill="#E2A05A"/>
+        <circle cx="240" cy="94" r="7" fill="#C4834A"/><circle cx="272" cy="94" r="7" fill="#C4834A"/>
+        <circle cx="250" cy="102" r="2.6" fill="#2A2440"/><circle cx="262" cy="102" r="2.6" fill="#2A2440"/>
+        <path d="M252 112 q4 4 8 0" stroke="#2A2440" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+      </g>
+      <g>
+        <circle cx="392" cy="140" r="46" fill="#5B3A8C"/>
+        <circle cx="392" cy="146" r="20" fill="#D9A57C"/>
+        <path d="M372 146 a20 20 0 0 1 40 0 q-6 -22 -20 -22 t-20 22Z" fill="#C8C2D0"/>
+        <circle cx="386" cy="148" r="3.2" fill="#2A2440"/><circle cx="399" cy="148" r="3.2" fill="#2A2440"/>
+        <path d="M388 158 q5 5 10 0" stroke="#A8724E" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+      </g>
+      <!-- velinhas embaixo, uma apagada -->
+      <g transform="translate(126,300)">
+        <g fill="#7FB77E">
+          <rect x="0" y="26" width="7" height="30"/><rect x="40" y="20" width="7" height="36"/>
+          <rect x="80" y="24" width="7" height="32"/><rect x="120" y="18" width="7" height="38"/>
+          <rect x="160" y="24" width="7" height="32"/><rect x="200" y="22" width="7" height="34"/>
+          <rect x="240" y="28" width="7" height="28"/>
+        </g>
+        <g fill="#F2B441">
+          <path d="M43.5 6 q9 10 0 18 q-9 -8 0 -18Z"/><path d="M83.5 10 q9 10 0 18 q-9 -8 0 -18Z"/>
+          <path d="M123.5 4 q9 10 0 18 q-9 -8 0 -18Z"/><path d="M163.5 10 q9 10 0 18 q-9 -8 0 -18Z"/>
+          <path d="M203.5 8 q9 10 0 18 q-9 -8 0 -18Z"/><path d="M243.5 14 q9 10 0 18 q-9 -8 0 -18Z"/>
+        </g>
+        <!-- a primeira, apagada, com fumacinha -->
+        <path d="M3 20 q7 -8 0 -16 q-7 8 0 16" stroke="#C8C2D0" stroke-width="2.6" fill="none" opacity=".7"/>
+        <path d="M3 4 q-8 -10 2 -18" stroke="#C8C2D0" stroke-width="2.4" fill="none" opacity=".5" stroke-linecap="round"/>
+      </g>
+    </svg>
+  </div>
+</div>
+
+<div class="nota">
+  <b>Amostra do produto.</b> Briefing: <b>Cecília, 7 anos, aniversário</b>. Ilustrações em vetor
+  desenhadas no próprio arquivo; na produção saem por IA no mesmo estilo.
+  <b>Nenhuma foto foi usada.</b>
+</div>
+
+</body>
+</html>
