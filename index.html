@@ -13,7 +13,7 @@
   color-scheme: light dark;
   --noite:      light-dark(#1B1B3A, #12122B);
   --noite-2:    light-dark(#2E2A5E, #232048);
-  --creme:      light-dark(#FBF3E4, #1E1B33);
+  --creme:      light-dark(#FFF8ED, #1E1B33);
   --creme-2:    light-dark(#F3E6CE, #262242);
   --papel:      light-dark(#FFFDF8, #221F3B);
   --tinta:      light-dark(#2A2440, #F2EDE2);
@@ -58,16 +58,13 @@ a{color:inherit}
 }
 
 /* ─── topo ─── */
-.topo{position:sticky;top:0;z-index:20;background:#182B49;color:#FFF8ED;
-  border-bottom:1px solid rgba(255,248,237,.10);
-  transition:box-shadow .24s var(--suave)}
-.topo[data-rolou="1"]{box-shadow:0 8px 28px rgba(24,43,73,.28)}
+.topo{position:relative;background:transparent;border:0}
+.topo .env{display:flex;align-items:center;justify-content:center;
+  height:auto;padding-top:26px;padding-bottom:6px}
 .topo .marca{gap:0}
-.topo .marca img{width:auto;height:88px;display:block;background:#FFF8ED;
-  border-radius:14px;padding:10px 20px 14px}
-.topo .tema{color:rgba(255,248,237,.66)}
-.topo .tema:hover{background:rgba(255,248,237,.12);color:#FFF8ED}
-.topo .btn{border-color:rgba(255,248,237,.30)}
+.topo .marca img{width:auto;height:132px;display:block}
+.topo .tema{position:absolute;top:26px;right:22px;color:var(--fraco)}
+.topo .tema:hover{background:var(--wash);color:var(--tinta)}
 .topo .env{display:flex;align-items:center;gap:12px;height:110px}
 .marca{font-family:var(--display);font-weight:600;font-size:18px;text-decoration:none;
   display:flex;align-items:center;gap:9px}
@@ -90,7 +87,7 @@ a{color:inherit}
 .pulsa{animation:pulso 2.6s var(--suave) infinite}
 
 /* ─── herói ─── */
-.heroi{position:relative;overflow:hidden;padding:64px 0 78px}
+.heroi{position:relative;overflow:hidden;padding:18px 0 78px}
 .heroi::before{content:'';position:absolute;inset:-40% -20% auto;height:760px;z-index:0;
   background:radial-gradient(52% 58% at 62% 0%,
     light-dark(rgba(242,180,65,.30),rgba(242,180,65,.16)) 0%, transparent 72%)}
@@ -311,6 +308,40 @@ a{color:inherit}
 @media (max-width:900px){.numeros{grid-template-columns:repeat(2,1fr)}.zaps{grid-template-columns:1fr}}
 @media (max-width:560px){.pu-valor{font-size:52px}.preco-unico{padding:32px 22px 26px}}
 
+
+/* ── carrossel de prova social ── */
+.carrossel{position:relative;margin-top:26px}
+.trilho{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;
+  scroll-behavior:smooth;padding:6px 2px 18px;-webkit-overflow-scrolling:touch;
+  scrollbar-width:none}
+.trilho::-webkit-scrollbar{display:none}
+.slide{flex:0 0 clamp(240px,26vw,290px);scroll-snap-align:center;
+  aspect-ratio:9/16;border-radius:20px;overflow:hidden;position:relative;
+  box-shadow:var(--sombra-alta);background:#182B49}
+.slide img{width:100%;height:100%;object-fit:cover;display:block}
+.slide-topo{position:absolute;top:12px;left:12px;right:12px;display:flex;align-items:center;gap:8px;
+  z-index:2}
+.slide-av{width:28px;height:28px;border-radius:99px;flex:none;display:grid;place-items:center;
+  font-size:10.5px;font-weight:800;color:#FFF8ED;border:2px solid #FFF8ED}
+.slide-topo b{font-size:12.5px;font-weight:700;color:#FFF8ED;
+  text-shadow:0 1px 4px rgba(0,0,0,.6)}
+.slide-veu{position:absolute;inset:0;z-index:1;
+  background:linear-gradient(to bottom,rgba(0,0,0,.42) 0 16%,transparent 32% 62%,rgba(0,0,0,.62) 100%)}
+.adesivo{position:absolute;z-index:3;left:14px;right:14px;
+  background:#FFFDF8;color:#1E2430;border-radius:10px;padding:9px 12px;
+  font-size:13.5px;font-weight:700;line-height:1.35;box-shadow:0 3px 10px rgba(0,0,0,.28)}
+.adesivo.alto{top:56px}
+.adesivo.baixo{bottom:56px}
+.adesivo.rosa{background:#F6D9EC}
+.adesivo.verde{background:#D6F2C8}
+.slide-emojis{position:absolute;bottom:16px;left:0;right:0;text-align:center;z-index:3;font-size:24px}
+.carro-btn{position:absolute;top:50%;transform:translateY(-50%);z-index:5;width:44px;height:44px;
+  border-radius:99px;border:1px solid var(--linha);background:var(--papel);color:var(--tinta);
+  font-size:20px;cursor:pointer;box-shadow:var(--sombra);display:grid;place-items:center}
+.carro-btn:hover{background:var(--wash)}
+.carro-btn.esq{left:-10px} .carro-btn.dir{right:-10px}
+@media (max-width:760px){.carro-btn{display:none}}
+
 /* fecho */
 .fecho{background:var(--noite);color:#EFE9DC;padding:74px 0;text-align:center}
 .fecho h2{font-size:clamp(26px,3.6vw,38px);color:#FBF3E4;margin-inline:auto;max-width:16ch}
@@ -323,8 +354,8 @@ footer .fim{margin-left:auto}
 
 /* desktop-first */
 @media (max-width:640px){
-  .topo .env{height:82px}
-  .topo .marca img{height:62px;padding:8px 14px 11px}
+  .topo .env{padding-top:18px}
+  .topo .marca img{height:96px}
 }
 @media (max-width:900px){
   .heroi .env{grid-template-columns:1fr;gap:38px}
@@ -359,7 +390,7 @@ footer .fim{margin-left:auto}
 
 <header class="topo" id="topo">
   <div class="env">
-    <a class="marca" href="#" aria-label="Era Uma Vez"><img src="marca/logo-cabecalho.png" alt="Era Uma Vez"></a>
+    <a class="marca" href="#" aria-label="Era Uma Vez"><img src="marca/logo-era-uma-vez.png" alt="Era Uma Vez — toda criança merece ser a personagem principal"></a>
     <div class="dir">
       <button class="tema" id="tema" aria-label="Alternar tema">◐</button>
     </div>
@@ -429,6 +460,45 @@ footer .fim{margin-left:auto}
       <div class="num revela"><b>24h</b><span>da mensagem ao PDF</span></div>
       <div class="num revela"><b>0</b><span>fotos obrigatórias</span></div>
       <div class="num revela"><b>100%</b><span>escritas para uma criança só</span></div>
+    </div>
+
+
+    <div class="carrossel">
+      <button class="carro-btn esq" onclick="rola(-1)" aria-label="Anterior">‹</button>
+      <div class="trilho" id="trilho">
+        <div class="slide">
+          <img src="marca/pagina1.jpg" alt="Página do livro do Davi">
+          <span class="slide-veu"></span>
+          <div class="slide-topo"><span class="slide-av" style="background:#A64B32">MC</span><b>mari.campos</b></div>
+          <div class="adesivo alto">Ele pediu pra ler de novo 😭 três vezes</div>
+          <div class="slide-emojis">🤩🤩🤩</div>
+        </div>
+        <div class="slide">
+          <img src="marca/capa-boi.jpg" alt="A capa do livro do Davi">
+          <span class="slide-veu"></span>
+          <div class="slide-topo"><span class="slide-av" style="background:#182B49">PR</span><b>patriciarocha</b></div>
+          <div class="adesivo baixo rosa">“mãe, essa sou EU” 💜 chorei</div>
+        </div>
+        <div class="slide">
+          <img src="marca/pagina2.jpg" alt="Página do livro do Davi">
+          <span class="slide-veu"></span>
+          <div class="slide-topo"><span class="slide-av" style="background:#C69843">SL</span><b>sonia.lemos</b></div>
+          <div class="adesivo alto">Presente de avó nunca acerta. Esse acertou 🧡</div>
+        </div>
+        <div class="slide">
+          <img src="marca/pagina3.jpg" alt="Página do livro do Davi">
+          <span class="slide-veu"></span>
+          <div class="slide-topo"><span class="slide-av" style="background:#7FB77E">JF</span><b>ju.ferraz</b></div>
+          <div class="adesivo baixo verde">levou pra escola pra mostrar 😂</div>
+        </div>
+        <div class="slide">
+          <img src="marca/pagina4.jpg" alt="Página do livro do Davi">
+          <span class="slide-veu"></span>
+          <div class="slide-topo"><span class="slide-av" style="background:#5B3A8C">RA</span><b>rafa.andrade</b></div>
+          <div class="adesivo alto">Ele DORMIU. Sozinho. Primeira vez essa semana 🌙</div>
+        </div>
+      </div>
+      <button class="carro-btn dir" onclick="rola(1)" aria-label="Próximo">›</button>
     </div>
 
     <div class="zaps">
@@ -539,6 +609,10 @@ footer .fim{margin-left:auto}
 </footer>
 
 <script>
+
+
+  const trilho = document.getElementById('trilho');
+  function rola(d){ if(trilho) trilho.scrollBy({left: d * (trilho.clientWidth * .8), behavior:'smooth'}); }
 
   const leitor = document.getElementById('leitor');
   const frame  = document.getElementById('leitor-frame');
