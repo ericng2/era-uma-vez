@@ -4,10 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Era Uma Vez — toda criança merece ser a personagem principal</title>
-<meta name="description" content="Toda criança merece ser a personagem principal. Livro infantil personalizado com o nome e a história real da sua criança. Ilustrado, em PDF. A partir de R$ 29.">
+<meta name="description" content="Toda criança merece ser a personagem principal. Livro infantil personalizado com o nome e a história real da sua criança. Ilustrado, em PDF. R$ 49,90, pagamento único.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,600&family=Nunito:wght@400;600;700;800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:wght@400;600;700;800&display=swap">
 <style>
 :root{
   color-scheme: light dark;
@@ -26,7 +26,7 @@
   --coral:      light-dark(#D4574A, #F08579);
   --verde-zap:  light-dark(#1FA855, #35D06F);
   --branco:     #FFFFFF;
-  --display:'Fraunces',Georgia,serif;
+  --display:'Baloo 2','Nunito',system-ui,sans-serif;
   --texto:'Nunito',-apple-system,BlinkMacSystemFont,system-ui,sans-serif;
   --r:10px; --r-lg:18px; --r-full:999px;
   --mola:cubic-bezier(.34,1.56,.64,1);
@@ -62,12 +62,13 @@ a{color:inherit}
   border-bottom:1px solid rgba(255,248,237,.10);
   transition:box-shadow .24s var(--suave)}
 .topo[data-rolou="1"]{box-shadow:0 8px 28px rgba(24,43,73,.28)}
-.topo .marca{color:#FFF8ED}
-.topo .marca img{background:#FFF8ED;border-radius:8px;padding:3px}
+.topo .marca{gap:0}
+.topo .marca img{width:auto;height:88px;display:block;background:#FFF8ED;
+  border-radius:14px;padding:10px 20px 14px}
 .topo .tema{color:rgba(255,248,237,.66)}
 .topo .tema:hover{background:rgba(255,248,237,.12);color:#FFF8ED}
 .topo .btn{border-color:rgba(255,248,237,.30)}
-.topo .env{display:flex;align-items:center;gap:12px;height:60px}
+.topo .env{display:flex;align-items:center;gap:12px;height:110px}
 .marca{font-family:var(--display);font-weight:600;font-size:18px;text-decoration:none;
   display:flex;align-items:center;gap:9px}
 .marca svg{display:block}
@@ -265,6 +266,51 @@ a{color:inherit}
 .depo-estrelas{color:var(--ambar);font-size:14px;letter-spacing:2px;margin-top:2px}
 @media (max-width:900px){.depos{grid-template-columns:1fr}}
 
+
+/* ── prova social: numeros + conversas ── */
+.numeros{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:32px}
+.num{background:var(--papel);border:1px solid var(--linha);border-radius:var(--r-lg);
+  padding:20px 16px;text-align:center;box-shadow:var(--sombra)}
+.num b{display:block;font-family:var(--display);font-size:34px;font-weight:800;color:var(--coral);
+  line-height:1;font-variant-numeric:tabular-nums}
+.num span{display:block;font-size:13px;color:var(--tinta-2);margin-top:7px;line-height:1.35}
+
+.zaps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:22px}
+.zap{background:#E6DDD0;border-radius:var(--r-lg);padding:16px;box-shadow:var(--sombra);
+  display:flex;flex-direction:column;gap:8px;
+  background-image:radial-gradient(circle at 1px 1px,rgba(24,43,73,.05) 1px,transparent 0);
+  background-size:14px 14px}
+.zap-topo{display:flex;align-items:center;gap:10px;padding-bottom:10px;margin-bottom:2px;
+  border-bottom:1px solid rgba(24,43,73,.10)}
+.zap-av{width:36px;height:36px;border-radius:99px;flex:none;display:grid;place-items:center;
+  font-size:13px;font-weight:800;color:#FFF8ED}
+.zap-topo b{display:block;font-size:14.5px;color:#182B49}
+.zap-topo span{font-size:12.5px;color:#6B6478}
+.balao{background:#FFFDF8;color:#1E2430;border-radius:14px 14px 14px 4px;padding:10px 13px;
+  font-size:14.5px;line-height:1.45;max-width:88%;align-self:flex-start;
+  box-shadow:0 1px 1px rgba(24,43,73,.10)}
+.balao.meu{background:#D6F2C8;border-radius:14px 14px 4px 14px;align-self:flex-end}
+
+/* ── preço único ── */
+.preco-unico{position:relative;max-width:520px;margin:38px auto 0;background:var(--papel);
+  border:2px solid var(--ambar);border-radius:22px;padding:38px 32px 30px;text-align:center;
+  box-shadow:var(--sombra-alta);display:flex;flex-direction:column;align-items:center}
+.pu-fita{position:absolute;top:-14px;left:50%;transform:translateX(-50%);white-space:nowrap;
+  background:var(--ambar);color:#182B49;font-size:12px;font-weight:800;letter-spacing:.05em;
+  text-transform:uppercase;border-radius:99px;padding:5px 18px}
+.pu-valor{font-family:var(--display);font-size:64px;font-weight:800;line-height:1;
+  letter-spacing:-.02em;font-variant-numeric:tabular-nums;color:var(--tinta)}
+.pu-valor small{font-size:28px;font-weight:700}
+.pu-obs{font-size:14px;color:var(--fraco);margin-top:8px}
+.pu-lista{list-style:none;padding:0;margin:24px 0;display:grid;gap:11px;text-align:left;width:100%}
+.pu-lista li{display:flex;gap:11px;font-size:15.5px;color:var(--tinta-2);line-height:1.4}
+.pu-lista li::before{content:'✓';color:var(--verde);font-weight:800;flex:none}
+.preco-unico .btn{width:100%}
+.pu-mini{font-size:13px;color:var(--fraco);margin-top:14px;line-height:1.5}
+
+@media (max-width:900px){.numeros{grid-template-columns:repeat(2,1fr)}.zaps{grid-template-columns:1fr}}
+@media (max-width:560px){.pu-valor{font-size:52px}.preco-unico{padding:32px 22px 26px}}
+
 /* fecho */
 .fecho{background:var(--noite);color:#EFE9DC;padding:74px 0;text-align:center}
 .fecho h2{font-size:clamp(26px,3.6vw,38px);color:#FBF3E4;margin-inline:auto;max-width:16ch}
@@ -276,6 +322,10 @@ footer .env{display:flex;gap:20px;flex-wrap:wrap;align-items:center;font-size:13
 footer .fim{margin-left:auto}
 
 /* desktop-first */
+@media (max-width:640px){
+  .topo .env{height:82px}
+  .topo .marca img{height:62px;padding:8px 14px 11px}
+}
 @media (max-width:900px){
   .heroi .env{grid-template-columns:1fr;gap:38px}
   .heroi h1{max-width:none}
@@ -309,10 +359,9 @@ footer .fim{margin-left:auto}
 
 <header class="topo" id="topo">
   <div class="env">
-    <a class="marca" href="#"><img src="marca/simbolo-era-uma-vez.png" alt="" width="30" height="30" style="flex:none;display:block">Era Uma Vez</a>
+    <a class="marca" href="#" aria-label="Era Uma Vez"><img src="marca/logo-cabecalho.png" alt="Era Uma Vez"></a>
     <div class="dir">
       <button class="tema" id="tema" aria-label="Alternar tema">◐</button>
-      <a class="btn btn-zap" href="https://wa.me/5541995553231?text=Oi!%20Quero%20fazer%20um%20livro%20personalizado" target="_blank" rel="noopener">Quero o meu</a>
     </div>
   </div>
 </header>
@@ -320,16 +369,10 @@ footer .fim{margin-left:auto}
 <section class="heroi">
   <div class="env">
     <div>
-      <span class="selo"><b></b>Pronto em até 24h · a partir de R$ 29</span>
+      <span class="selo"><b></b>Pronto em até 24h · R$ 49,90</span>
       <h1>Toda criança merece ser<br>a <em>personagem principal</em>.</h1>
       <p class="sub">Um livro escrito para uma criança só — a sua. Você conta o nome, a idade e o que ela está vivendo agora. A gente escreve, ilustra e entrega em PDF, pronto para ler hoje à noite.</p>
-      <div class="acoes">
-        <a class="btn btn-zap btn-lg pulsa" href="https://wa.me/5541995553231?text=Oi!%20Quero%20fazer%20um%20livro%20personalizado.%20O%20nome%20da%20crian%C3%A7a%20%C3%A9%3A" target="_blank" rel="noopener">
-          Fazer o livro no WhatsApp
-        </a>
-        <a class="btn btn-lg" href="#precos">Ver os preços ↓</a>
-      </div>
-      <p class="mini">Sem cadastro · você fala com uma pessoa de verdade · <b>a foto é opcional</b></p>
+      
     </div>
 
     <button class="livro" id="abre-historia" aria-label="Abrir a história O Boi da Cara Preta">
@@ -352,7 +395,7 @@ footer .fim{margin-left:auto}
   <div class="env">
     <div><b>24h</b><span>da mensagem ao PDF na sua mão</span></div>
     <div><b>0</b><span>fotos obrigatórias</span></div>
-    <div><b>R$ 29</b><span>para começar</span></div>
+    <div><b>R$ 49,90</b><span>pagamento único</span></div>
     <div><b>∞</b><span>vezes que ela vai pedir para reler</span></div>
   </div>
 </div>
@@ -375,65 +418,44 @@ footer .fim{margin-left:auto}
   </div>
 </section>
 
-<section class="bloco" id="exemplos" style="padding-top:0">
+<section class="bloco" id="prova" style="padding-top:0">
   <div class="env">
-    <span class="rotulo revela">Exemplos</span>
-    <h2 class="revela">Três crianças, três noites diferentes.</h2>
-    <div class="exemplos">
-      <a class="ex revela" href="livros/manu.html">
-        <div class="ex-arte"><svg viewBox="0 0 300 300" aria-label="Capa: medo de dormir">
-          <rect width="300" height="300" fill="#2E2A5E"/>
-          <circle cx="220" cy="80" r="90" fill="#F2B441" opacity=".16"/>
-          <circle cx="220" cy="80" r="30" fill="#F2B441"/>
-          <g fill="#FBF3E4"><circle cx="50" cy="46" r="2" opacity=".8"/><circle cx="98" cy="88" r="1.5" opacity=".6"/><circle cx="140" cy="40" r="1.7" opacity=".7"/></g>
-          <path d="M0 216 Q80 186 150 212 T300 200 L300 300 L0 300Z" fill="#241F4A"/>
-          <g transform="translate(112,150)">
-            <circle cx="26" cy="26" r="22" fill="#F0C9A4"/>
-            <path d="M4 24 a22 22 0 0 1 44 0 q-22 -17 -44 0Z" fill="#4A3728"/>
-            <circle cx="19" cy="28" r="4" fill="#2A2440"/><circle cx="34" cy="28" r="4" fill="#2A2440"/>
-            <path d="M8 50 h36 v40 h-36Z" fill="#E86A5C"/>
-          </g>
-        </svg></div>
-        <div class="ex-legenda"><b>Manu, 5 anos</b><span>Medo de dormir</span></div></a>
-      <a class="ex revela" href="livros/teo.html">
-        <div class="ex-arte"><svg viewBox="0 0 300 300" aria-label="Capa: primeiro dia de aula">
-          <rect width="300" height="300" fill="#3B6EA8"/>
-          <circle cx="70" cy="66" r="34" fill="#FBD99A"/>
-          <path d="M0 210 Q80 180 150 206 T300 194 L300 300 L0 300Z" fill="#7FB77E"/>
-          <rect x="176" y="120" width="104" height="88" fill="#E8DCC4"/>
-          <path d="M170 120 L228 88 L286 120Z" fill="#D4574A"/>
-          <rect x="212" y="156" width="32" height="52" fill="#8A6A4A"/>
-          <g transform="translate(60,158)">
-            <circle cx="26" cy="26" r="22" fill="#E8B98F"/>
-            <path d="M4 22 a22 22 0 0 1 44 0 q-22 -14 -44 0Z" fill="#2E2118"/>
-            <circle cx="19" cy="28" r="4" fill="#2A2440"/><circle cx="34" cy="28" r="4" fill="#2A2440"/>
-            <path d="M8 50 h36 v40 h-36Z" fill="#F2B441"/>
-            <rect x="-4" y="54" width="16" height="26" rx="4" fill="#D4574A"/>
-          </g>
-        </svg></div>
-        <div class="ex-legenda"><b>Téo, 4 anos</b><span>Primeiro dia de aula</span></div></a>
-      <a class="ex revela" href="livros/cecilia.html">
-        <div class="ex-arte"><svg viewBox="0 0 300 300" aria-label="Capa: aniversário">
-          <rect width="300" height="300" fill="#5B3A8C"/>
-          <g fill="#F2B441" opacity=".9">
-            <circle cx="46" cy="52" r="3"/><circle cx="252" cy="70" r="2.4"/><circle cx="120" cy="34" r="2"/>
-          </g>
-          <path d="M0 220 Q90 194 160 216 T300 206 L300 300 L0 300Z" fill="#452B6E"/>
-          <g transform="translate(178,150)">
-            <rect x="0" y="30" width="92" height="56" rx="6" fill="#FBF3E4"/>
-            <rect x="0" y="30" width="92" height="16" fill="#F2A0A0"/>
-            <rect x="42" y="8" width="6" height="22" fill="#7FB77E"/>
-            <circle cx="45" cy="4" r="7" fill="#F2B441"/>
-          </g>
-          <g transform="translate(58,150)">
-            <circle cx="26" cy="26" r="22" fill="#D9A57C"/>
-            <path d="M2 26 a24 24 0 0 1 48 0 q-24 -20 -48 0Z" fill="#3A2418"/>
-            <circle cx="19" cy="28" r="4" fill="#2A2440"/><circle cx="34" cy="28" r="4" fill="#2A2440"/>
-            <path d="M21 40 q5 5 11 0" stroke="#A8724E" stroke-width="2.4" fill="none" stroke-linecap="round"/>
-            <path d="M8 50 h36 v40 h-36Z" fill="#7FB77E"/>
-          </g>
-        </svg></div>
-        <div class="ex-legenda"><b>Cecília, 7 anos</b><span>Aniversário</span></div></a>
+    <span class="rotulo revela">Quem já leu</span>
+    <h2 class="revela">As crianças pedem para ler de novo.</h2>
+    <span class="depo-aviso revela">⚠️ Números e conversas de exemplo — trocar pelos reais antes de anunciar</span>
+
+    <div class="numeros">
+      <div class="num revela"><b>3</b><span>histórias já entregues</span></div>
+      <div class="num revela"><b>24h</b><span>da mensagem ao PDF</span></div>
+      <div class="num revela"><b>0</b><span>fotos obrigatórias</span></div>
+      <div class="num revela"><b>100%</b><span>escritas para uma criança só</span></div>
+    </div>
+
+    <div class="zaps">
+      <div class="zap revela">
+        <div class="zap-topo"><span class="zap-av" style="background:#A64B32">MC</span>
+          <div><b>Mariana</b><span>mãe do Davi, 6 anos</span></div></div>
+        <div class="balao">Gente, ele pediu pra ler de novo 😭 três vezes</div>
+        <div class="balao">na terceira já sabia a parte do boi de cor e falava junto comigo</div>
+        <div class="balao meu">Que delícia! 🥹 Ele gostou do final?</div>
+        <div class="balao">Ele DORMIU. Sozinho. Pela primeira vez essa semana</div>
+      </div>
+      <div class="zap revela">
+        <div class="zap-topo"><span class="zap-av" style="background:#182B49">PR</span>
+          <div><b>Patrícia</b><span>mãe da Manu, 5 anos</span></div></div>
+        <div class="balao">comprei achando que era só um mimo</div>
+        <div class="balao">ela pegou o livro e falou "mãe, essa sou EU"</div>
+        <div class="balao">chorei 😅</div>
+        <div class="balao meu">É exatamente isso ✨</div>
+      </div>
+      <div class="zap revela">
+        <div class="zap-topo"><span class="zap-av" style="background:#C69843">SL</span>
+          <div><b>Sônia</b><span>avó do Téo, 4 anos</span></div></div>
+        <div class="balao">presente de avó nunca acerta 😂</div>
+        <div class="balao">esse acertou</div>
+        <div class="balao">ele levou pra mostrar na escola no dia seguinte, imagina</div>
+        <div class="balao meu">Melhor recado do dia 🧡</div>
+      </div>
     </div>
   </div>
 </section>
@@ -469,72 +491,30 @@ footer .fim{margin-left:auto}
   </div>
 </section>
 
-<section class="bloco" id="depoimentos" style="padding-top:0">
-  <div class="env">
-    <span class="rotulo revela">Quem já leu</span>
-    <h2 class="revela">“Ele pediu para ler de novo. Três vezes.”</h2>
-    <p class="intro revela">O livro não é sobre a criança. É <b>da</b> criança — e elas percebem
-      a diferença na primeira página.</p>
-    <span class="depo-aviso revela">⚠️ Exemplos — trocar por depoimentos reais antes de anunciar</span>
-
-    <div class="depos">
-      <div class="depo-cartao revela">
-        <span class="depo-aspas">“</span>
-        <blockquote>Ele pediu para ler de novo. Três vezes. Na terceira já sabia a parte do boi
-          de cor e falava junto comigo.</blockquote>
-        <div class="depo-quem">
-          <span class="depo-av" style="background:#A64B32">MC</span>
-          <div><b>Mariana C.</b><span>mãe do Davi, 6 anos</span>
-            <div class="depo-estrelas">★★★★★</div></div>
-        </div>
-      </div>
-
-      <div class="depo-cartao revela">
-        <span class="depo-aspas">“</span>
-        <blockquote>Comprei achando que era só um mimo. Ela dormiu sozinha pela primeira vez na
-          semana que a gente começou a ler.</blockquote>
-        <div class="depo-quem">
-          <span class="depo-av" style="background:#182B49">PR</span>
-          <div><b>Patrícia R.</b><span>mãe da Manu, 5 anos</span>
-            <div class="depo-estrelas">★★★★★</div></div>
-        </div>
-      </div>
-
-      <div class="depo-cartao revela">
-        <span class="depo-aspas">“</span>
-        <blockquote>Presente de avó nunca acerta. Esse acertou. Ele levou o livro para mostrar
-          na escola no dia seguinte.</blockquote>
-        <div class="depo-quem">
-          <span class="depo-av" style="background:#C69843">SL</span>
-          <div><b>Sônia L.</b><span>avó do Téo, 4 anos</span>
-            <div class="depo-estrelas">★★★★★</div></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
 <section class="bloco" id="precos" style="padding-top:0">
   <div class="env">
-    <span class="rotulo revela">Preços</span>
-    <h2 class="revela">Escolha o tamanho do presente.</h2>
-    <div class="precos">
-      <div class="plano revela"><h3>História</h3><div class="valor">R$ 29</div>
-        <ul><li>História digital curta</li><li>Nome da criança no texto</li><li>PDF em até 24h</li></ul>
-        <a class="btn" href="https://wa.me/5541995553231?text=Quero%20a%20Hist%C3%B3ria%20digital%20(R%24%2029)" target="_blank" rel="noopener">Quero esse</a></div>
-      <div class="plano top revela"><h3>Livro ilustrado</h3><div class="valor">R$ 59</div>
-        <ul><li>Livro completo ilustrado</li><li>Capa com o nome dela</li><li>A situação real dela na história</li><li>PDF em até 24h</li></ul>
-        <a class="btn btn-zap" href="https://wa.me/5541995553231?text=Quero%20o%20Livro%20ilustrado%20(R%24%2059)" target="_blank" rel="noopener">Quero esse</a></div>
-      <div class="plano revela"><h3>Premium</h3><div class="valor">R$ 99</div>
-        <ul><li>Tudo do Livro ilustrado</li><li>Mais páginas</li><li><b>Versão para colorir</b></li><li>Pronto para imprimir</li></ul>
-        <a class="btn" href="https://wa.me/5541995553231?text=Quero%20o%20Premium%20(R%24%2099)" target="_blank" rel="noopener">Quero esse</a></div>
-      <div class="plano revela"><h3>Expresso</h3><div class="valor">R$ 149</div>
-        <ul><li>Tudo do Premium</li><li><b>Entrega expressa</b></li><li><b>Vídeo narrado</b> da história</li><li>Para presentear hoje</li></ul>
-        <a class="btn" href="https://wa.me/5541995553231?text=Quero%20o%20Expresso%20(R%24%20149)" target="_blank" rel="noopener">Quero esse</a></div>
+    <span class="rotulo revela" style="display:block;text-align:center">Preço</span>
+    <h2 class="revela" style="text-align:center;margin-inline:auto;max-width:16ch">Um livro. Um preço. Sem pegadinha.</h2>
+
+    <div class="preco-unico revela">
+      <span class="pu-fita">Livro completo ilustrado</span>
+      <div class="pu-valor">R$ 49<small>,90</small></div>
+      <span class="pu-obs">pagamento único · sem assinatura</span>
+      <ul class="pu-lista">
+        <li>História escrita só para a sua criança</li>
+        <li>Capa com o nome dela</li>
+        <li>A situação real dela dentro da história</li>
+        <li>Ilustrações originais, página a página</li>
+        <li>PDF em até 24h, no seu WhatsApp</li>
+        <li>Um ajuste sem custo, se quiser mudar algo</li>
+      </ul>
+      <a class="btn btn-zap btn-lg" href="https://wa.me/5541995553231?text=Quero%20o%20meu%20livro%20(R%24%2049%2C90).%20O%20nome%20da%20crian%C3%A7a%20%C3%A9%3A" target="_blank" rel="noopener">Quero o meu</a>
+      <span class="pu-mini">Sem cadastro · você fala com uma pessoa de verdade · a foto é opcional</span>
     </div>
+
     <p class="aviso revela">🔒 <b>A foto é opcional e nunca é obrigatória.</b> Sem foto, a ilustração
-      usa só o que você descrever — e funciona igual. Se você mandar, usamos apenas para desenhar
-      e apagamos depois da entrega.</p>
+      usa só o que você descrever — e funciona igual. Se você mandar, usamos apenas para
+      desenhar e apagamos depois da entrega.</p>
   </div>
 </section>
 
@@ -553,7 +533,7 @@ footer .fim{margin-left:auto}
 <footer>
   <div class="env">
     <a class="marca" href="#" style="font-size:15px"><img src="marca/simbolo-era-uma-vez.png" alt="" width="30" height="30" style="flex:none;display:block">Era Uma Vez</a>
-    <a href="#como">Como funciona</a><a href="#exemplos">Exemplos</a><a href="#precos">Preços</a>
+    <a href="#como">Como funciona</a><a href="#prova">Depoimentos</a><a href="#precos">Preços</a>
     <span class="fim">Livros feitos um a um · 2026</span>
   </div>
 </footer>
