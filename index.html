@@ -242,6 +242,29 @@ a{color:inherit}
 .ch-cta{margin-top:10px;font-weight:800;font-size:15px;color:#F2B441}
 @media (max-width:560px){.cartao-historia{flex-direction:column;text-align:center}}
 
+
+/* ── depoimentos ── */
+.depo-aviso{display:inline-flex;align-items:center;gap:8px;margin-top:14px;
+  background:var(--ambar-suave);border:1px dashed var(--ambar);border-radius:99px;
+  padding:5px 14px;font-size:12.5px;font-weight:700;color:light-dark(#8A5E10,#F2B441)}
+.depos{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:34px}
+.depo-cartao{background:var(--papel);border:1px solid var(--linha);border-radius:var(--r-lg);
+  padding:26px 24px;box-shadow:var(--sombra);display:flex;flex-direction:column;
+  transition:transform .2s var(--suave)}
+.depo-cartao:hover{transform:translateY(-4px)}
+.depo-aspas{font-family:var(--display);font-size:44px;line-height:.6;color:var(--ambar);
+  height:22px}
+.depo-cartao blockquote{margin:14px 0 0;font-family:var(--display);font-size:17.5px;
+  line-height:1.5;font-weight:500;color:var(--tinta);flex:1}
+.depo-quem{display:flex;align-items:center;gap:12px;margin-top:20px;
+  padding-top:16px;border-top:1px solid var(--linha)}
+.depo-av{width:40px;height:40px;border-radius:99px;flex:none;display:grid;place-items:center;
+  font-size:14px;font-weight:800;color:#FFF8ED}
+.depo-quem b{display:block;font-size:14.5px}
+.depo-quem span{font-size:13px;color:var(--fraco)}
+.depo-estrelas{color:var(--ambar);font-size:14px;letter-spacing:2px;margin-top:2px}
+@media (max-width:900px){.depos{grid-template-columns:1fr}}
+
 /* fecho */
 .fecho{background:var(--noite);color:#EFE9DC;padding:74px 0;text-align:center}
 .fecho h2{font-size:clamp(26px,3.6vw,38px);color:#FBF3E4;margin-inline:auto;max-width:16ch}
@@ -443,6 +466,51 @@ footer .fim{margin-left:auto}
         <span class="ch-cta">Ler a história inteira →</span>
       </div>
     </a>
+  </div>
+</section>
+
+<section class="bloco" id="depoimentos" style="padding-top:0">
+  <div class="env">
+    <span class="rotulo revela">Quem já leu</span>
+    <h2 class="revela">“Ele pediu para ler de novo. Três vezes.”</h2>
+    <p class="intro revela">O livro não é sobre a criança. É <b>da</b> criança — e elas percebem
+      a diferença na primeira página.</p>
+    <span class="depo-aviso revela">⚠️ Exemplos — trocar por depoimentos reais antes de anunciar</span>
+
+    <div class="depos">
+      <div class="depo-cartao revela">
+        <span class="depo-aspas">“</span>
+        <blockquote>Ele pediu para ler de novo. Três vezes. Na terceira já sabia a parte do boi
+          de cor e falava junto comigo.</blockquote>
+        <div class="depo-quem">
+          <span class="depo-av" style="background:#A64B32">MC</span>
+          <div><b>Mariana C.</b><span>mãe do Davi, 6 anos</span>
+            <div class="depo-estrelas">★★★★★</div></div>
+        </div>
+      </div>
+
+      <div class="depo-cartao revela">
+        <span class="depo-aspas">“</span>
+        <blockquote>Comprei achando que era só um mimo. Ela dormiu sozinha pela primeira vez na
+          semana que a gente começou a ler.</blockquote>
+        <div class="depo-quem">
+          <span class="depo-av" style="background:#182B49">PR</span>
+          <div><b>Patrícia R.</b><span>mãe da Manu, 5 anos</span>
+            <div class="depo-estrelas">★★★★★</div></div>
+        </div>
+      </div>
+
+      <div class="depo-cartao revela">
+        <span class="depo-aspas">“</span>
+        <blockquote>Presente de avó nunca acerta. Esse acertou. Ele levou o livro para mostrar
+          na escola no dia seguinte.</blockquote>
+        <div class="depo-quem">
+          <span class="depo-av" style="background:#C69843">SL</span>
+          <div><b>Sônia L.</b><span>avó do Téo, 4 anos</span>
+            <div class="depo-estrelas">★★★★★</div></div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
