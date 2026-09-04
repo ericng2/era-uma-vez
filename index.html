@@ -58,10 +58,15 @@ a{color:inherit}
 }
 
 /* ─── topo ─── */
-.topo{position:sticky;top:0;z-index:20;backdrop-filter:blur(10px);
-  background:light-dark(rgba(251,243,228,.86),rgba(30,27,51,.86));
-  border-bottom:1px solid transparent;transition:border-color .2s}
-.topo[data-rolou="1"]{border-bottom-color:var(--linha)}
+.topo{position:sticky;top:0;z-index:20;background:#182B49;color:#FFF8ED;
+  border-bottom:1px solid rgba(255,248,237,.10);
+  transition:box-shadow .24s var(--suave)}
+.topo[data-rolou="1"]{box-shadow:0 8px 28px rgba(24,43,73,.28)}
+.topo .marca{color:#FFF8ED}
+.topo .marca img{background:#FFF8ED;border-radius:8px;padding:3px}
+.topo .tema{color:rgba(255,248,237,.66)}
+.topo .tema:hover{background:rgba(255,248,237,.12);color:#FFF8ED}
+.topo .btn{border-color:rgba(255,248,237,.30)}
 .topo .env{display:flex;align-items:center;gap:12px;height:60px}
 .marca{font-family:var(--display);font-weight:600;font-size:18px;text-decoration:none;
   display:flex;align-items:center;gap:9px}
@@ -246,9 +251,6 @@ a{color:inherit}
 footer{padding:30px 0;border-top:1px solid var(--linha)}
 footer .env{display:flex;gap:20px;flex-wrap:wrap;align-items:center;font-size:13.5px;color:var(--fraco)}
 footer .fim{margin-left:auto}
-
-/* zap flutuante */
-.zap-fixo{position:fixed;right:18px;bottom:18px;z-index:40;box-shadow:var(--sombra-alta)}
 
 /* desktop-first */
 @media (max-width:900px){
@@ -487,8 +489,6 @@ footer .fim{margin-left:auto}
     <span class="fim">Livros feitos um a um · 2026</span>
   </div>
 </footer>
-
-<a class="btn btn-zap zap-fixo" href="https://wa.me/5541995553231?text=Oi!%20Quero%20fazer%20um%20livro%20personalizado" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">💬 WhatsApp</a>
 
 <script>
 
